@@ -8,7 +8,7 @@ User = get_user_model()
 class UserSerializer(serializers.ModelSerializer):
     snippets = serializers.HyperlinkedRelatedField(
         many=True,
-        view_name='snippets;snippet-detail',
+        view_name='snippets:snippet-detail',
         read_only=True,
     )
 

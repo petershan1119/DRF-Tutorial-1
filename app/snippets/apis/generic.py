@@ -3,6 +3,7 @@ from rest_framework import generics, permissions, renderers
 from rest_framework.response import Response
 
 from snippets.permissions import IsOwnerOrReadOnly
+from utils.pagination import StandardResultsSetPagination
 from ..models import Snippet
 from ..serializers import SnippetSerializer
 
@@ -31,6 +32,7 @@ class SnippetDetail(generics.RetrieveUpdateDestroyAPIView):
         permissions.IsAuthenticatedOrReadOnly,
         IsOwnerOrReadOnly,
     )
+    pagination_class = StandardResultsSetPagination
 
 class SnippetHighlight(generics.GenericAPIView):
     queryset = Snippet.objects.all()
