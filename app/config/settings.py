@@ -43,6 +43,7 @@ REST_FRAMEWORK = {
     )
 }
 
+AUTH_USER_MODEL = 'members.User'
 
 # Application definition
 
@@ -54,9 +55,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django_extensions',
     'rest_framework',
 
+    'members',
     'snippets',
+
 ]
 
 MIDDLEWARE = [
